@@ -35,7 +35,7 @@ read_digits = function(x) {
     txt = read.table(x)
 }
 
-data = read_digits("E:/Davis/STA 141A/DATA/test.txt")
+data = read_digits("E:/Davis/STA 141A/DATA/train.txt")
 
 
 #2)---------------------------------------------------------------------
@@ -81,6 +81,11 @@ avg_digit = function(read_data) {
             
 }
 avg_digit(data)
+
+data_matrix = as.matrix(data)
+pixel_var = apply(data_matrix, 2, var)
+sort(pixel_var)
+order(pixel_var) #gives us lowest and highest variance, therefore most helpful and least helpful pixel for classification
 
 
 
